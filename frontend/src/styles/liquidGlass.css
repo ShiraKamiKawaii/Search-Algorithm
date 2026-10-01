@@ -1,0 +1,118 @@
+/* =========================================================
+   LIQUID GLASS BASE STYLE & ANIMATIONS
+   ========================================================= */
+
+/* Class nút Liquid Glass dạng chữ nhật */
+.liquid-glass-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  color: #0f172a;
+  font-weight: 700;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 
+    0 8px 20px -4px rgba(31, 38, 135, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Luồng sáng lỏng phản chiếu (Liquid Sheen) */
+.liquid-glass-btn::before, .liquid-glass-icon-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.6) 45%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.6) 55%,
+    transparent 80%
+  );
+  transform: rotate(25deg);
+  transition: all 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+  pointer-events: none;
+}
+
+.liquid-glass-btn:hover::before, .liquid-glass-icon-btn:hover::before {
+  left: 100%;
+}
+
+.liquid-glass-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 12px 24px -6px rgba(37, 99, 235, 0.2),
+    0 0 15px rgba(255, 255, 255, 0.8),
+    inset 0 1px 3px rgba(255, 255, 255, 1);
+}
+
+/* Nút dạng Nổi Bật (Primary) */
+.liquid-glass-btn-primary {
+  background: rgba(37, 99, 235, 0.85) !important;
+  color: #ffffff !important;
+  border-color: rgba(147, 197, 253, 0.7) !important;
+  box-shadow: 
+    0 8px 24px -4px rgba(37, 99, 235, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6) !important;
+}
+
+.liquid-glass-btn-primary:hover {
+  background: rgba(37, 99, 235, 0.95) !important;
+  box-shadow: 
+    0 12px 28px -4px rgba(37, 99, 235, 0.6),
+    0 0 20px rgba(59, 130, 246, 0.6) !important;
+}
+
+/* Nút Tròn Nhỏ (Icon Buttons trong Floating Controls) */
+.liquid-glass-icon-btn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.liquid-glass-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #2563eb;
+  border-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+}
+
+.liquid-glass-icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Khung Floating Panel Kính Lỏng */
+.liquid-glass-panel {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(20px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 
+    0 20px 35px -10px rgba(15, 23, 42, 0.15),
+    0 0 15px rgba(255, 255, 255, 0.5),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9) !important;
+}

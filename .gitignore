@@ -1,0 +1,19 @@
+# Môi trường ảo Python
+venv/
+.venv/
+env/
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# IDE & Config
+.vscode/
+.idea/
+.env
+
+# Dataset/Model quá nặng (nếu có)
+*.pth
+*.h5
+*.onnx
+data/
